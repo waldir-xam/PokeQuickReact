@@ -4,6 +4,10 @@ import profesor from "../img/profesor.svg";
 import pokeballUp from "../img/pokeball-up.svg";
 import pokeballDown from "../img/pokeball-down.svg";
 import FooterOne from "../components/FooterOne";
+import asideOne from "../img/aside1.png";
+import asideTwo from "../img/aside2.png";
+import asideThree from "../img/aside3.png";
+import asideFour from "../img/aside4.png";
 
 const Home = () => {
   return (
@@ -15,8 +19,8 @@ const Home = () => {
           <div className="container1-home">
             <img className="profesor-home" src={profesor} />
             <p className="floating-text-home">
-              Quieres elegir a <a className="poke-type-home">Charmander</a>? Es un
-              Pokemon tipo <a className="poke-type-home">Fuego</a>
+              Quieres elegir a <a className="poke-type-home">Charmander</a>? Es
+              un Pokemon tipo <a className="poke-type-home">Fuego</a>
             </p>
             <div className="pokeballs-home">
               <div className="pokeball-1-home">
@@ -60,7 +64,11 @@ const Home = () => {
         </div>
         <FooterOne />
         <div className="aside-left-home">
-          <div className="aside-icons-home"></div>
+          {" "}
+          <img src={asideOne} className="aside-img-home" />
+          <img src={asideTwo} className="aside-img-home" />
+          <img src={asideThree} className="aside-img-home" />
+          <img src={asideFour} className="aside-img-home" />
         </div>
       </div>
     </div>
