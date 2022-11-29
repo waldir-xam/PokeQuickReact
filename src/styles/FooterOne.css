@@ -1,0 +1,17 @@
+.main__container2-home {
+  width: 75vw;
+  text-align: center;
+  color: var(--color-2);
+}
+.container2-home {
+  background: rgba(46, 46, 46, 0.72);
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 1.5rem 0 1.5rem 0;
+}
+.trainer-1-home:hover,
+.trainer-2-home:hover {
+  animation: pulse 1.5s; /* Animate for 1.5 seconds on hover */
+}

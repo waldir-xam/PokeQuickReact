@@ -1,0 +1,35 @@
+.polka-bg {
+  background-image: radial-gradient(rgb(0, 0, 0) 18%, transparent 18%),
+    radial-gradient(rgb(0, 0, 0) 18%, transparent 18%);
+  background-position: 0px 0px, 8px 8px;
+  background-size: 16px 16px;
+  background-color: var(--color-1);
+  animation: diagonal-move-anim 5s linear infinite alternate;
+}
+@keyframes diagonal-move-anim {
+  0% {
+    background-position: 0px 0px, 15px 15px;
+    background-size: 16px 16px;
+    background-color: var(--color-1);
+  }
+/*   25% {
+    background-position: 5px 5px, 15px 15px;
+    background-size: 16px 16px;
+    background-color: var(--color-1);
+  }
+  50% {
+    background-position: 10px 10px, 20px 20px;
+    background-size: 16px 16px;
+    background-color: var(--color-1);
+  }
+  75% {
+    background-position: 5px 5px, 15px 15px;
+    background-size: 16px 16px;
+    background-color: var(--color-1);
+  } */
+  100% {
+    background-position: 0px 0px, 15px 15px;
+    background-size: 16px 16px;
+    background-color: var(--color-1);
+  }
+}

@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-family: var(--font-1);
+}
+.logo-container {
+  width: 100%;
+  text-align: center;
+}
+.logo {
+  height: 65px;
+}
+.nav__sound {
+  position: absolute;
+  right: 50px;
+  padding: 1rem;
+}
+.nav__sound:hover {
+  animation: pulse 1.5s; /* Animate for 1.5 seconds on hover */
+}
+.nav__sound span {
+  margin-right: 1rem;
+  color: var(--color-2);
+  font-weight: var(--fw-2);
+}
+.nav__sound span:hover {
+  color: var(--color-3);
+}

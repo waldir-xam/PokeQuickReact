@@ -1,0 +1,138 @@
+.body__container-home {
+  margin: auto;
+  max-width: 90vw;
+  max-height: 90%;
+  font-family: var(--font-1);
+}
+
+/* MAIN */
+.main-home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.main__container1-home {
+  text-align: center;
+  width: 55%;
+  color: var(--color-2);
+}
+
+.aside-left-home {
+  position: absolute;
+  left: 75px;
+  top: 150px;
+  color: var(--color-2);
+}
+.main__container1-home,
+.main__container2-home h3 {
+  margin: 0.5rem;
+}
+/* container api pokemon */
+.container1-home {
+  background: rgba(46, 46, 46, 0.72);
+  /* display: flex;
+gap: -4rem;
+justify-content: center;
+flex-direction: column; */
+  padding: 2rem;
+  border-radius: 2rem;
+  margin-top: 0.5rem;
+}
+.profesor-home {
+  width: 20vh;
+  padding: 1em;
+}
+.floating-text-home {
+  position: absolute;
+  right: 15vw;
+  top: 15vw;
+  border: solid 2px var(--color-3);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  width: 25vw;
+  background-color: var(--color-2);
+  background-blend-mode: darken;
+  color: var(--color-3);
+  animation: pulse-1 3.5s ease-in-out infinite;
+}
+.poke-type-home{
+    color: red;
+}
+
+.pokeballs-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+}
+.pokeball-up-home,
+.pokeball-down-home {
+  width: 12vh;
+}
+.pokeball-1-home,
+.pokeball-2-home,
+.pokeball-3-home {
+  display: flex;
+  flex-direction: column;
+}
+/* INICIO ANIMACION POKEBALLS HOVER */
+.pokeball-1-home:hover,
+.pokeball-2-home:hover,
+.pokeball-3-home:hover {
+  animation: pulse 1.5s; /* Animate for 1.5 seconds on hover */
+}
+
+/* FIN ANIMACION */
+
+
+.aside-icons-home {
+  background: rgba(46, 46, 46, 0.72);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 2rem;
+  display: flex;
+  gap: 2rem;
+  border-radius: 2rem;
+  height: 40vh;
+  width: 60px;
+}
+
+/* animacion pulse-1 */
+@keyframes pulse-1 {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  25% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+}
+/* animacion pulse  */
+@keyframes pulse {
+  0% {
+    transform: scale(0.85);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+  }
+}
