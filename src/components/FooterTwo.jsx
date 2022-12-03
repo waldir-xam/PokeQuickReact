@@ -7,9 +7,9 @@ import "../styles/FooterOne.css";
 const FooterOne = () => {
   return (
     <div>
-<footer class="footer">
-        <nav class="footer__nav">
-          <ul class="footer__ul">
+<footer className="footer">
+        <nav className="footer__nav">
+          <ul className="footer__ul">
             <li>
               <a href="">
                 <img src="./src/img/star.svg" alt="" />

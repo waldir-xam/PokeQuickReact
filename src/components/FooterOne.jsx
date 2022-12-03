@@ -7,14 +7,14 @@ import "../styles/FooterOne.css";
 const FooterOne = () => {
   return (
     <div>
-      <div class="main__container2-home">
+      <div className="main__container2-home">
         <h3>Escoge tu entrenador</h3>
-        <div class="container2-home">
-          <div class="trainer-1-home">
+        <div className="container2-home">
+          <div className="trainer-1-home">
             <img src={trainerOne} alt="" />
             <h4>Red</h4>
           </div>
-          <div class="trainer-2-home">
+          <div className="trainer-2-home">
             <img src={trainerTwo} alt="" />
             <h4>Blue</h4>
           </div>

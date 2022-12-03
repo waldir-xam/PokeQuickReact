@@ -1,8 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  background-image: url('./src/img/bg1.png');
+  background-size: cover;
+}
+
 .body__container {
   margin: auto;
   max-width: 90vw;
   max-height: 90%;
   /* background-color: blue; */
+}
+
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav__sound {
+  display: flex;
+  align-items: center;
+}
+
+.nav__sound span {
+  margin-right: 1rem;
+  color: white;
+}
+
+.logo {
+  max-width: 100%;
 }
 
 /* MAIN */
@@ -97,7 +130,7 @@
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
-
+background-color: white;
   position: absolute;
   width: 11vw;
   z-index: 2;
@@ -193,4 +226,97 @@
 .footer__ul img {
   width: 48px;
   height: 48px;
+}
+@media (max-width:768px) {
+  .container__caracteristicas {
+      width: 25vw;
+      top: 5rem;
+      left: 5rem;
+  }
+}
+
+@media (max-width:567px) {
+  .main {
+      flex-direction: column-reverse;
+  }
+
+  .main__container1,
+  .main__container2 {
+      width: 100%;
+  }
+
+  .container2,
+  .container1 {
+      margin-top: 1rem;
+  }
+
+  .container__caracteristicas {
+      width: 30vw;
+      top: 5rem;
+      left: 10rem;
+  }
+
+  .body__container nav {
+      padding: 0.5rem;
+  }
+
+  .nav__sound {
+      display: none;
+  }
+  .container2__pokemon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .container2__pokemon__lleno {
+      position: relative;
+      height: 100px;
+      width: 100px;
+  }
+
+  .container2__pokemon__lleno img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 1rem;
+      padding: 0.5rem;
+  }
+
+  .img__pokemon {
+      max-width: 100%;
+  }
+
+  .footer {
+      display: none;
+  }
+
+}
+
+@media (max-width:360px) {
+
+  .container2__pokemon__lleno {
+
+      position: relative;
+      height: 100px;
+      width: 100px;
+  }
+
+  .container2__pokemon__lleno img {
+      position: absolute;
+      height: 80%;
+      width: 100%;
+  }
+
+  .container2__entrenador img {
+      margin-top: 5rem;
+  }
+
+  .container__caracteristicas {
+      width: 40vw;
+      top: 5rem;
+      left: 5rem;
+      display: none;
+  }
+
 }
