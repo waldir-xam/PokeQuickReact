@@ -1,4 +1,42 @@
-.nav {
+.nav-menu-btn {
+  background-image: url(../img/pokebola_logo.svg);
+  background-repeat: no-repeat;
+  height: 4rem;
+  width: 4rem;
+  margin: 0 auto;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+}
+.nav-menu-btn:hover {
+  animation: pulse-2 1s infinite;
+}
+.show__menu {
+  transform: translateX(250px);
+  transition: all 0.3s;
+}
+.navbar {
+  background-color: rgb(233, 59, 59);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  z-index: 1;
+  font-family: var(--font-1);
+  font-weight: var(--fw-2);
+  transform: translateX(-100%);
+}
+.navbar a {
+  text-decoration: none;
+  color: #fafafa;
+}
+.navbar li {
+  text-align: center;
+  list-style: none;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -17,7 +55,7 @@
   padding: 1rem;
 }
 .nav__sound:hover {
-  animation: pulse 1.5s; /* Animate for 1.5 seconds on hover */
+  animation: pulse-1 1.5s infinite; /* Animate for 1.5 seconds on hover */
 }
 .nav__sound span {
   margin-right: 1rem;
