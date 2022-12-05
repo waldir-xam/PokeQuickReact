@@ -90,14 +90,28 @@
   -webkit-appearance: none;
 }
 
-.img__pokemon {
-  max-width: 80%;
+.img_pokemon{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 45%;
+  height: 45%;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1.5rem;
+}
+.img_pokemon_titulo{
+  display: flex;
+  justify-content: space-between;
 }
 
-.img__pokemon img {
-  max-width: 100%;
+.img_pokemon_contenido{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
 }
-
 
 /* container mis pokemones */
 .main__container2 figure {
