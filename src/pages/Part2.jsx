@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Part2.css";
 import FooterTwo from "../components/FooterTwo";
-
+import searchPokemon from "../services/pokeapi";
+import { useParams } from "react-router-dom";
+import CardPokemon from "../components/cardPokemon";
+import dataPokemon from "../services/config";
 const Part2 = () => {
+  const fetchPoke = async (pokemon) => {
+    const data = await searchPokemon(pokemon);
+    console.log(data);
+  };
+
+  const Datos = () => {
+    return dataPokemon;
+  };
+
+  useEffect(() => {
+    fetchPoke(1);
+  }, []);
+
+  const newDatos = Datos();
+
   return (
     <div className="body__container">
       <div className="main">
@@ -15,109 +33,20 @@ const Part2 = () => {
               placeholder="Escribe el nombre del pokemon a buscar"
             />
           </div>
-
-          <div class="container1">
-            <div class="img_pokemon">
-              <div class="img_pokemon_titulo">
-                <h6>0.6m</h6>
-                <h6>8.5kg</h6>
-              </div>
-              <div class="img_pokemon_contenido">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
-                  width="20%"
-                  alt=""
+          <div className="container1">
+            {newDatos.map((resultado) => {
+              return (
+                <CardPokemon
+                  key={resultado.id}
+                  medida={resultado.medida}
+                  peso={resultado.peso}
+                  img={resultado.img}
+                  nombre="Charmander"
+                  tipo="Fuego"
+                  especial="Blaze"
                 />
-                <h3>Charmander</h3>
-                <h4>Fire</h4>
-                <h4>blaze</h4>
-              </div>
-            </div>
-
-            <div class="img_pokemon">
-              <div class="img_pokemon_titulo">
-                <h6>0.6m</h6>
-                <h6>8.5kg</h6>
-              </div>
-              <div class="img_pokemon_contenido">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
-                  width="20%"
-                  alt=""
-                />
-                <h3>Charmander</h3>
-                <h4>Fire</h4>
-                <h4>blaze</h4>
-              </div>
-            </div>
-
-            <div class="img_pokemon">
-              <div class="img_pokemon_titulo">
-                <h6>0.6m</h6>
-                <h6>8.5kg</h6>
-              </div>
-              <div class="img_pokemon_contenido">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
-                  width="20%"
-                  alt=""
-                />
-                <h3>Charmander</h3>
-                <h4>Fire</h4>
-                <h4>blaze</h4>
-              </div>
-            </div>
-
-            <div class="img_pokemon">
-              <div class="img_pokemon_titulo">
-                <h6>0.6m</h6>
-                <h6>8.5kg</h6>
-              </div>
-              <div class="img_pokemon_contenido">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
-                  width="20%"
-                  alt=""
-                />
-                <h3>Charmander</h3>
-                <h4>Fire</h4>
-                <h4>blaze</h4>
-              </div>
-            </div>
-
-            <div class="img_pokemon">
-              <div class="img_pokemon_titulo">
-                <h6>0.6m</h6>
-                <h6>8.5kg</h6>
-              </div>
-              <div class="img_pokemon_contenido">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
-                  width="20%"
-                  alt=""
-                />
-                <h3>Charmander</h3>
-                <h4>Fire</h4>
-                <h4>blaze</h4>
-              </div>
-            </div>
-
-            <div class="img_pokemon">
-              <div class="img_pokemon_titulo">
-                <h6>0.6m</h6>
-                <h6>8.5kg</h6>
-              </div>
-              <div class="img_pokemon_contenido">
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
-                  width="20%"
-                  alt=""
-                />
-                <h3>Charmander</h3>
-                <h4>Fire</h4>
-                <h4>blaze</h4>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
 
