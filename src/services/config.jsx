@@ -1,5 +1,11 @@
 import React from "react";
 
+export const getLocal = (nombre) => {
+  const data = localStorage.getItem(nombre);
+  const response = JSON.parse(data);
+  return response;
+};
+
 const dataPokemon = [
   {
     id: 1,
@@ -74,5 +80,4 @@ const dataPokemon = [
     especial: "Blaze",
   },
 ];
-
 export default dataPokemon;

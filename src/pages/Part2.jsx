@@ -4,7 +4,9 @@ import FooterTwo from "../components/FooterTwo";
 import searchPokemon from "../services/pokeapi";
 import { useParams } from "react-router-dom";
 import CardPokemon from "../components/cardPokemon";
-import dataPokemon from "../services/config";
+import dataPokemon, { getLocal } from "../services/config";
+import ColeccionPokemon from "../components/coleccionPokemon";
+
 const Part2 = () => {
   const fetchPoke = async (pokemon) => {
     const data = await searchPokemon(pokemon);
@@ -14,6 +16,8 @@ const Part2 = () => {
   const Datos = () => {
     return dataPokemon;
   };
+
+  const newLocal = getLocal("poke.user");
 
   useEffect(() => {
     fetchPoke(1);
@@ -92,21 +96,15 @@ const Part2 = () => {
                 Comprar
               </button>
             </div>
+
             <div className="container2__pokemon">
-              <div className="container2__pokemon__lleno">
-                <img src="./src/img/pngwing4.svg" alt="" />
-                <img src="./src/img/charmander.svg" alt="" />
-              </div>
-
-              <div className="container2__pokemon__lleno">
-                <img src="./src/img/pngwing4.svg" alt="" />
-                <img src="./src/img/charmander.svg" alt="" />
-              </div>
-
-              <div className="container2__pokemon__lleno">
-                <img src="./src/img/pngwing4.svg" alt="" />
-                <img src="./src/img/charmander.svg" alt="" />
-              </div>
+              {newLocal.map((resultado, index) => {
+                console.log(
+                  "🚀 ~ file: Part2.jsx:102 ~ {newLocal.map ~ resultado",
+                  resultado
+                );
+                return <ColeccionPokemon key={index} pokemon={resultado.img} />;
+              })}
             </div>
 
             <div className="container2__entrenador">
@@ -136,5 +134,4 @@ const Part2 = () => {
     </div>
   );
 };
-
 export default Part2;

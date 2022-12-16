@@ -176,8 +176,8 @@ background-color: white;
 
 .container2__pokemon__lleno {
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: 180px;
+  width: 180px;
 }
 
 .container2__pokemon__lleno img {
@@ -206,10 +206,10 @@ background-color: white;
 }
 
 .container2__pokemon img {
-  width: 200px;
+  width: 80%;
   height: 80%;
   /* margin: 1rem 0; */
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 
 /* FOOTER */
