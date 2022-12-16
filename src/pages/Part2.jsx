@@ -45,9 +45,9 @@ const Part2 = () => {
                   medida={resultado.medida}
                   peso={resultado.peso}
                   img={resultado.img}
-                  nombre="Charmander"
-                  tipo="Fuego"
-                  especial="Blaze"
+                  nombre={resultado.nombre}
+                  tipo={resultado.tipo}
+                  especial={resultado.especial}
                 />
               );
             })}
