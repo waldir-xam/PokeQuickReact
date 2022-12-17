@@ -26,10 +26,6 @@ const Header = () => {
         <nav>
           {/*           <img className="logo" src={pokebola} alt="" />
            */}
-<<<<<<< HEAD
-          <button className="nav-menu-btn" id="menuBtn"></button>
-          <ul className="navbar">
-=======
           <button className="nav-menu-btn" id="menuBtn" onClick={() => setMostrar(true)}></button>
           
           <Modal isOpen={mostrar} onClose={() => setMostrar(false)}>
@@ -38,8 +34,7 @@ const Header = () => {
             
           </Modal>
           
-          <ul class="navbar">
->>>>>>> origin/hoas22
+{/*           <ul class="navbar">
             <li>
               <a href="">Inicio</a>
             </li>
@@ -52,7 +47,7 @@ const Header = () => {
             <li>
               <a href="">Mochila</a>
             </li>
-          </ul>
+          </ul> */}
         </nav>
         <figure className="logo-container">
           <img className="logo" src={pokelogo} alt="logo" />

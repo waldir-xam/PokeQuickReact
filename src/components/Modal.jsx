@@ -7,8 +7,8 @@ const Modal = ({ isOpen, onClose, children }) => {
       <div className="modal-body ">
         <button className="modal-close close" onClick={onClose} >CERRAR</button>
         {children}
-        <button className="close" onClick={onClose}>CERRAR</button>
-      </div>
+{/*         <button className="close" onClick={onClose}>CERRAR</button>
+ */}      </div>
     </div>
   )
 }
