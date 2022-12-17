@@ -10,7 +10,6 @@ const Header = () => {
 /*   menuBtn.addEventListener("click", () => {
   body.classList.toggle("show__menu"); 
   })*/;
-
   return (
     <div>
       <div class="header">
