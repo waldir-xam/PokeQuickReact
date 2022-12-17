@@ -12,12 +12,12 @@ const Header = () => {
   })*/;
   return (
     <div>
-      <div class="header">
+      <div className="header">
         <nav>
           {/*           <img className="logo" src={pokebola} alt="" />
            */}
           <button className="nav-menu-btn" id="menuBtn"></button>
-          <ul class="navbar">
+          <ul className="navbar">
             <li>
               <a href="">Inicio</a>
             </li>
@@ -32,12 +32,12 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <figure class="logo-container">
-          <img class="logo" src={pokelogo} alt="logo" />
+        <figure className="logo-container">
+          <img className="logo" src={pokelogo} alt="logo" />
         </figure>
-        <div class="nav__sound">
+        <div className="nav__sound">
           <span>BGM ON/OFF</span>
-          <i class="fa-solid fa-play"></i>
+          <i className="fa-solid fa-play"></i>
         </div>
       </div>
     </div>

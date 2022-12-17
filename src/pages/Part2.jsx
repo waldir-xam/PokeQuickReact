@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Part2.css";
 import FooterTwo from "../components/FooterTwo";
+import searchPokemon from "../services/pokeapi";
+import { useParams } from "react-router-dom";
+import CardPokemon from "../components/cardPokemon";
+import dataPokemon, { getLocal } from "../services/config";
+import ColeccionPokemon from "../components/coleccionPokemon";
 
 const Part2 = () => {
+  const fetchPoke = async (pokemon) => {
+    const data = await searchPokemon(pokemon);
+    console.log(data);
+  };
+
+  const Datos = () => {
+    return dataPokemon;
+  };
+
+  const newLocal = getLocal("poke.user");
+
+  useEffect(() => {
+    fetchPoke(1);
+  }, []);
+
+  const newDatos = Datos();
+
   return (
     <div className="body__container">
       <div className="main">
@@ -15,32 +37,20 @@ const Part2 = () => {
               placeholder="Escribe el nombre del pokemon a buscar"
             />
           </div>
-
           <div className="container1">
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
-            <div className="img__pokemon">
-              <img src="./src/img/image2.svg" alt="" />
-            </div>
+            {newDatos.map((resultado) => {
+              return (
+                <CardPokemon
+                  key={resultado.id}
+                  medida={resultado.medida}
+                  peso={resultado.peso}
+                  img={resultado.img}
+                  nombre={resultado.nombre}
+                  tipo={resultado.tipo}
+                  especial={resultado.especial}
+                />
+              );
+            })}
           </div>
         </div>
 
@@ -86,21 +96,15 @@ const Part2 = () => {
                 Comprar
               </button>
             </div>
+
             <div className="container2__pokemon">
-              <div className="container2__pokemon__lleno">
-                <img src="./src/img/pngwing4.svg" alt="" />
-                <img src="./src/img/charmander.svg" alt="" />
-              </div>
-
-              <div className="container2__pokemon__lleno">
-                <img src="./src/img/pngwing4.svg" alt="" />
-                <img src="./src/img/charmander.svg" alt="" />
-              </div>
-
-              <div className="container2__pokemon__lleno">
-                <img src="./src/img/pngwing4.svg" alt="" />
-                <img src="./src/img/charmander.svg" alt="" />
-              </div>
+              {newLocal.map((resultado, index) => {
+                console.log(
+                  "🚀 ~ file: Part2.jsx:102 ~ {newLocal.map ~ resultado",
+                  resultado
+                );
+                return <ColeccionPokemon key={index} pokemon={resultado.img} />;
+              })}
             </div>
 
             <div className="container2__entrenador">
@@ -130,5 +134,4 @@ const Part2 = () => {
     </div>
   );
 };
-
 export default Part2;
