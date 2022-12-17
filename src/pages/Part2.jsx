@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Part2.css";
 import FooterTwo from "../components/FooterTwo";
 import searchPokemon from "../services/pokeapi";
@@ -8,22 +8,33 @@ import dataPokemon, { getLocal } from "../services/config";
 import ColeccionPokemon from "../components/coleccionPokemon";
 
 const Part2 = () => {
-  const fetchPoke = async (pokemon) => {
-    const data = await searchPokemon(pokemon);
-    console.log(data);
+  const [newLocal, setNewLocal] = useState([]);
+  const [datos, setDatos] = useState([]);
+  const [search, setSearch] = useState("");
+  // const fetchPoke = async (pokemon) => {
+  //   const data = await searchPokemon(pokemon);
+  //   console.log(data);
+  // };
+
+  const searchr = (e) => {
+    console.log("🚀 ~ file: Part2.jsx:20 ~ searchr ~ e", e.target.value);
+    setSearch(e.target.value);
   };
 
-  const Datos = () => {
-    return dataPokemon;
-  };
-
-  const newLocal = getLocal("poke.user");
+  let resultado = [];
+  if (!search) {
+    resultado = datos;
+  } else {
+    resultado = datos.filter((dato) =>
+      dato.nombre.toLowerCase().includes(search.toLocaleLowerCase())
+    );
+  }
 
   useEffect(() => {
-    fetchPoke(1);
-  }, []);
-
-  const newDatos = Datos();
+    setNewLocal(getLocal("poke.user"));
+    setDatos(dataPokemon);
+    // fetchPoke(1);
+  }, [datos]);
 
   return (
     <div className="body__container">
@@ -35,10 +46,12 @@ const Part2 = () => {
               className="main__container1__titulo__input"
               type="text"
               placeholder="Escribe el nombre del pokemon a buscar"
+              value={search}
+              onChange={searchr}
             />
           </div>
           <div className="container1">
-            {newDatos.map((resultado) => {
+            {resultado.map((resultado) => {
               return (
                 <CardPokemon
                   key={resultado.id}
@@ -99,10 +112,6 @@ const Part2 = () => {
 
             <div className="container2__pokemon">
               {newLocal.map((resultado, index) => {
-                console.log(
-                  "🚀 ~ file: Part2.jsx:102 ~ {newLocal.map ~ resultado",
-                  resultado
-                );
                 return <ColeccionPokemon key={index} pokemon={resultado.img} />;
               })}
             </div>
