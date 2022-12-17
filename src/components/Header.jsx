@@ -1,9 +1,19 @@
 import React from "react";
+import { useState } from 'react'
+import Modal from "../components/Modal";
+import Login from "../components/Login"
+import Modales from "../components/Modales";
 import pokelogo from "../img/poke-logo.png";
 import pokebola from "../img/pokebola_logo.svg";
 import "../styles/Header.css";
 
 const Header = () => {
+
+  const [mostrar, setMostrar] = useState(false)
+  const [verContador, setVerContador] = useState(false)
+  const [verFormulario, setVerFormulario] = useState(false)
+
+
   const menuBtn = document.getElementById("menuBtn");
   const body = document.body;
 
@@ -16,8 +26,20 @@ const Header = () => {
         <nav>
           {/*           <img className="logo" src={pokebola} alt="" />
            */}
+<<<<<<< HEAD
           <button className="nav-menu-btn" id="menuBtn"></button>
           <ul className="navbar">
+=======
+          <button className="nav-menu-btn" id="menuBtn" onClick={() => setMostrar(true)}></button>
+          
+          <Modal isOpen={mostrar} onClose={() => setMostrar(false)}>
+            
+            <Login/>
+            
+          </Modal>
+          
+          <ul class="navbar">
+>>>>>>> origin/hoas22
             <li>
               <a href="">Inicio</a>
             </li>
