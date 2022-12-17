@@ -5,6 +5,7 @@
   background-size: 16px 16px;
   background-color: var(--color-1);
   animation: diagonal-move-anim 8s linear infinite alternate;
+  height: 100vh;
 }
 @keyframes diagonal-move-anim {
   0% {

@@ -13,5 +13,5 @@
 }
 .trainer-1-home:hover,
 .trainer-2-home:hover {
-  animation: pulse 1.5s; /* Animate for 1.5 seconds on hover */
+  animation: pulse-2 1.5s infinite; /* Animate for 1.5 seconds on hover */
 }

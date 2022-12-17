@@ -18,6 +18,26 @@ const FooterOne = () => {
             <img src={trainerTwo} alt="" />
             <h4>Blue</h4>
           </div>
+          <div class="trainer-1-home">
+            <img src={trainerOne} alt="" />
+            <h4>Red</h4>
+          </div>
+          <div class="trainer-2-home">
+            <img src={trainerTwo} alt="" />
+            <h4>Blue</h4>
+          </div>
+          <div class="trainer-1-home">
+            <img src={trainerOne} alt="" />
+            <h4>Red</h4>
+          </div>
+          <div class="trainer-1-home">
+            <img src={trainerOne} alt="" />
+            <h4>Red</h4>
+          </div>
+          <div class="trainer-1-home">
+            <img src={trainerOne} alt="" />
+            <h4>Red</h4>
+          </div>
         </div>
       </div>
     </div>
