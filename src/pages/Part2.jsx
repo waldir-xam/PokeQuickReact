@@ -98,13 +98,10 @@ const Part2 = () => {
             </div>
 
             <div className="container2__pokemon">
-              {newLocal.map((resultado, index) => {
-                console.log(
-                  "🚀 ~ file: Part2.jsx:102 ~ {newLocal.map ~ resultado",
-                  resultado
-                );
+         {/*      {newLocal.map((resultado, index) => {
+                console.log(resultado);
                 return <ColeccionPokemon key={index} pokemon={resultado.img} />;
-              })}
+              })} */}
             </div>
 
             <div className="container2__entrenador">

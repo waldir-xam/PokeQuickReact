@@ -13,6 +13,7 @@
   margin: auto;
   max-width: 90vw;
   max-height: 90%;
+  font-family: var(--font-2);
   /* background-color: blue; */
 }
 
@@ -68,6 +69,8 @@
   padding: 1rem 5rem;
   border-radius: 1rem;
   background-color: rgba(46, 46, 46, 0.72);
+  color: var(--color-2);
+  font-family: var(--font-1);
 }
 
 /* container api pokemon */
@@ -223,18 +226,20 @@ background-color: white;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  font-weight: var(--fw-2);
 }
 
 .footer__ul li {
   padding: 1rem 0;
   list-style: none;
   text-align: center;
+
 }
 
 .footer__ul li a {
   text-decoration: none;
   color: white;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .footer__ul img {
