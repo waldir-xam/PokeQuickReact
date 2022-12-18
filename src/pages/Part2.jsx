@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../styles/Part2.css";
 import FooterTwo from "../components/FooterTwo";
 import searchPokemon from "../services/pokeapi";
@@ -6,24 +6,36 @@ import { useParams } from "react-router-dom";
 import CardPokemon from "../components/cardPokemon";
 import dataPokemon, { getLocal } from "../services/config";
 import ColeccionPokemon from "../components/coleccionPokemon";
+import CardCaracteristicas from "../components/CardCaracteristicas";
+import { AuthContext } from "../context/UserContext";
 
 const Part2 = () => {
-  const fetchPoke = async (pokemon) => {
-    const data = await searchPokemon(pokemon);
-    console.log(data);
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  const { datosCon } = useContext(AuthContext);
+  const [newLocal, setNewLocal] = useState([]);
+  const [datos, setDatos] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const searchr = (e) => {
+    setSearch(e.target.value);
   };
 
-  const Datos = () => {
-    return dataPokemon;
-  };
-
-  const newLocal = getLocal("poke.user");
+  let resultado = [];
+  if (!search) {
+    resultado = datos;
+  } else {
+    resultado = datos.filter((dato) =>
+      dato.nombre.toLowerCase().includes(search.toLocaleLowerCase())
+    );
+  }
 
   useEffect(() => {
-    fetchPoke(1);
-  }, []);
-
-  const newDatos = Datos();
+    setNewLocal(getLocal("poke.user"));
+    setDatos(dataPokemon);
+    // fetchPoke(1);
+  }, [datos]);
 
   return (
     <div className="body__container">
@@ -35,10 +47,12 @@ const Part2 = () => {
               className="main__container1__titulo__input"
               type="text"
               placeholder="Escribe el nombre del pokemon a buscar"
+              value={search}
+              onChange={searchr}
             />
           </div>
           <div className="container1">
-            {newDatos.map((resultado) => {
+            {resultado.map((resultado) => {
               return (
                 <CardPokemon
                   key={resultado.id}
@@ -59,51 +73,21 @@ const Part2 = () => {
             <img src="./src/img/MisPokemons.svg" alt="" />
           </figure>
           <div className="container2">
-            <div
-              className="container__caracteristicas"
-              /*               style="background-color:white ;"
-               */
-            >
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="70">
-                  70%
-                </progress>
-                <h4>70</h4>
-              </div>
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="55">
-                  55%
-                </progress>
-                <h4>55</h4>
-              </div>
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="68">
-                  68%
-                </progress>
-                <h4>68</h4>
-              </div>
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="90">
-                  90%
-                </progress>
-                <h4>90</h4>
-              </div>
-              <button className="container__caracteristicas__button">
-                Comprar
-              </button>
-            </div>
-
             <div className="container2__pokemon">
-         {/*      {newLocal.map((resultado, index) => {
-                console.log(resultado);
-                return <ColeccionPokemon key={index} pokemon={resultado.img} />;
-              })} */}
+              {newLocal &&
+                newLocal.map((resultado, index) => {
+                  return (
+                    <ColeccionPokemon key={index} pokemon={resultado.img} />
+                  );
+                })}
             </div>
-
+            {datosCon && (
+              <CardCaracteristicas
+                vida={getRandomInt(100)}
+                ataque={getRandomInt(99)}
+                defensa={getRandomInt(98)}
+              />
+            )}
             <div className="container2__entrenador">
               <img src="src/img/entrenador.svg" alt="" />
             </div>
