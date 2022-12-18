@@ -15,6 +15,9 @@ const dataPokemon = [
     nombre: "Bulbasaur",
     tipo: "Grass",
     especial: "Overgrow",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 2,
@@ -24,6 +27,9 @@ const dataPokemon = [
     nombre: "Ivysaur",
     tipo: "Poison",
     especial: "Chlorophyll",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 3,
@@ -33,6 +39,9 @@ const dataPokemon = [
     nombre: "Venusaur",
     tipo: "Grass",
     especial: "Overgrow",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 4,
@@ -42,6 +51,9 @@ const dataPokemon = [
     nombre: "Charmander",
     tipo: "Fire",
     especial: "Blaze",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 5,
@@ -51,6 +63,9 @@ const dataPokemon = [
     nombre: "Charmeleon",
     tipo: "Speed",
     especial: "Solar Power",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 6,
@@ -60,6 +75,9 @@ const dataPokemon = [
     nombre: "Charizard",
     tipo: "Flying",
     especial: "Blaze",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 7,
@@ -69,6 +87,9 @@ const dataPokemon = [
     nombre: "Squirtle",
     tipo: "Water",
     especial: "Rain Dish",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 8,
@@ -78,6 +99,9 @@ const dataPokemon = [
     nombre: "Wartortle",
     tipo: "Water",
     especial: "Torrent",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 9,
@@ -87,6 +111,9 @@ const dataPokemon = [
     nombre: "Blastoise",
     tipo: "Water",
     especial: "Rain Dish",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 10,
@@ -96,6 +123,9 @@ const dataPokemon = [
     nombre: "Caterpie",
     tipo: "Bug",
     especial: "Run Away",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 11,
@@ -105,6 +135,9 @@ const dataPokemon = [
     nombre: "Metapod",
     tipo: "Bug",
     especial: "Shed Skin",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 12,
@@ -114,6 +147,9 @@ const dataPokemon = [
     nombre: "Butterfree",
     tipo: "Flying",
     especial: "Tinted Lens",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 13,
@@ -123,6 +159,9 @@ const dataPokemon = [
     nombre: "Weedle",
     tipo: "Poison",
     especial: "Run Away",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 14,
@@ -132,6 +171,9 @@ const dataPokemon = [
     nombre: "Kakuna",
     tipo: "Bug",
     especial: "Shed Skin",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 15,
@@ -141,6 +183,9 @@ const dataPokemon = [
     nombre: "Beedrill",
     tipo: "Poison",
     especial: "Sniper",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 16,
@@ -150,6 +195,9 @@ const dataPokemon = [
     nombre: "Pidgey",
     tipo: "Flying",
     especial: "Keen Eye",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 17,
@@ -159,6 +207,9 @@ const dataPokemon = [
     nombre: "Pidgeotto",
     tipo: "Normal",
     especial: "Tangled Feet",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 18,
@@ -168,6 +219,9 @@ const dataPokemon = [
     nombre: "Pidgeot",
     tipo: "Flying",
     especial: "Big Pecks",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 19,
@@ -177,6 +231,9 @@ const dataPokemon = [
     nombre: "Rattata",
     tipo: "Normal",
     especial: "Guts",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 20,
@@ -186,6 +243,9 @@ const dataPokemon = [
     nombre: "Raticate",
     tipo: "Normal",
     especial: "Hustle",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 21,
@@ -195,6 +255,9 @@ const dataPokemon = [
     nombre: "Spearow",
     tipo: "Flying",
     especial: "Sniper",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
   {
     id: 22,
@@ -204,6 +267,9 @@ const dataPokemon = [
     nombre: "Fearow",
     tipo: "normal",
     especial: "Keen Eye",
+    vida: 20,
+    ataque: 25,
+    defensa: 30,
   },
 ];
 export default dataPokemon;

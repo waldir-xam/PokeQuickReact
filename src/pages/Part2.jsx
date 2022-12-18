@@ -6,18 +6,18 @@ import { useParams } from "react-router-dom";
 import CardPokemon from "../components/cardPokemon";
 import dataPokemon, { getLocal } from "../services/config";
 import ColeccionPokemon from "../components/coleccionPokemon";
-
+import CardCaracteristicas from "../components/CardCaracteristicas";
 const Part2 = () => {
   const [newLocal, setNewLocal] = useState([]);
   const [datos, setDatos] = useState([]);
   const [search, setSearch] = useState("");
+
   // const fetchPoke = async (pokemon) => {
   //   const data = await searchPokemon(pokemon);
   //   console.log(data);
   // };
 
   const searchr = (e) => {
-    console.log("🚀 ~ file: Part2.jsx:20 ~ searchr ~ e", e.target.value);
     setSearch(e.target.value);
   };
 
@@ -72,50 +72,12 @@ const Part2 = () => {
             <img src="./src/img/MisPokemons.svg" alt="" />
           </figure>
           <div className="container2">
-            <div
-              className="container__caracteristicas"
-              /*               style="background-color:white ;"
-               */
-            >
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="70">
-                  70%
-                </progress>
-                <h4>70</h4>
-              </div>
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="55">
-                  55%
-                </progress>
-                <h4>55</h4>
-              </div>
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="68">
-                  68%
-                </progress>
-                <h4>68</h4>
-              </div>
-              <div className="container__caracteristicas__item">
-                <h4>Vida</h4>
-                <progress max="100" value="90">
-                  90%
-                </progress>
-                <h4>90</h4>
-              </div>
-              <button className="container__caracteristicas__button">
-                Comprar
-              </button>
-            </div>
-
             <div className="container2__pokemon">
               {newLocal.map((resultado, index) => {
                 return <ColeccionPokemon key={index} pokemon={resultado.img} />;
               })}
             </div>
-
+            <CardCaracteristicas vida={30} ataque={50} defensa={60} />
             <div className="container2__entrenador">
               <img src="src/img/entrenador.svg" alt="" />
             </div>
