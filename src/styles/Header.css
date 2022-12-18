@@ -60,9 +60,9 @@
     right: 50px;
     padding: 1rem;
   }
-  .nav__sound:hover {
-    animation: pulse-1 1.5s infinite; /* Animate for 1.5 seconds on hover */
-  }
+/*   .nav__sound:hover {
+    animation: pulse-1 5s;
+  } */
   .nav__sound span {
     margin-right: 1rem;
     color: var(--color-2);
@@ -84,7 +84,7 @@
   border: none;
 }
 .nav-menu-btn:hover {
-  animation: pulse-2 1s infinite;
+  animation: pulse-2 5s ;
 }
 .show__menu {
   transform: translateX(250px);
@@ -128,9 +128,6 @@
   position: absolute;
   right: 50px;
   padding: 1rem;
-}
-.nav__sound:hover {
-  animation: pulse-1 1.5s infinite; /* Animate for 1.5 seconds on hover */
 }
 .nav__sound span {
   margin-right: 1rem;
