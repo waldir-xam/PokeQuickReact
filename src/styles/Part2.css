@@ -68,6 +68,9 @@
   padding: 1rem 5rem;
   border-radius: 1rem;
   background-color: rgba(46, 46, 46, 0.72);
+  font-family: var(--font-1);
+  font-weight: var(--fw-3);
+  color: var(--color-2);
 }
 
 /* container api pokemon */
@@ -103,6 +106,8 @@
 .img_pokemon_titulo{
   display: flex;
   justify-content: space-between;
+  font-family: var(--font-2);
+  font-weight: var(--fw-3);
 }
 
 .img_pokemon_contenido{
@@ -112,7 +117,15 @@
   align-items: center;
   height: 90%;
 }
-
+.img_pokemon_contenido h3{
+  font-family: var(--font-1);
+  color: var(--color-1);
+  font-weight: var(--fw-3);
+}
+.img_pokemon_contenido h4{
+  font-family: var(--font-2);
+  font-weight: var(--fw-3);
+}
 /* container mis pokemones */
 .main__container2 figure {
   width: 100%;
