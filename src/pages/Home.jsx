@@ -8,7 +8,6 @@ import asideOne from "../img/aside1.png";
 import asideTwo from "../img/aside2.png";
 import asideThree from "../img/aside3.png";
 import asideFour from "../img/aside4.png";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -63,12 +62,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Link to="/stage2">
-          <button className="nextStep">
-            Siguiente <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </Link>
-        <FooterOne />
+        <button className="nextStep">Siguiente <i class="fa-solid fa-arrow-right"></i></button> <FooterOne />
         <div className="aside-left-home">
           <img src={asideOne} className="aside-img-home" />
           <img src={asideTwo} className="aside-img-home" />
