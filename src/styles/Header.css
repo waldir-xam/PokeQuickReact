@@ -1,4 +1,79 @@
-.nav-menu-btn {
+
+/* ELEMENTOS RESPONSIVE */
+/*RESPONSIVE PARA SMARTPHONE  */
+@media only screen and (max-width: 600px) {
+  .nav-menu-btn {
+    background-image: url(../img/pokebola_logo.svg);
+    background-repeat: no-repeat;
+    height: 4rem;
+    width: 4rem;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+  }
+  .nav-menu-btn:hover {
+    animation: pulse-2 1s infinite;
+  }
+  .show__menu {
+    transform: translateX(250px);
+    transition: all 0.3s;
+  }
+  .navbar {
+    background-color: rgb(233, 59, 59);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 1;
+    font-family: var(--font-1);
+    font-weight: var(--fw-2);
+    transform: translateX(-100%);
+  }
+  .navbar a {
+    text-decoration: none;
+    color: #fafafa;
+  }
+  .navbar li {
+    text-align: center;
+    list-style: none;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-family: var(--font-1);
+  }
+  .logo-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    left: -15px;
+  }
+  .logo {
+    height: 65px;
+  }
+  .nav__sound {
+    position: absolute;
+    right: 50px;
+    padding: 1rem;
+  }
+  .nav__sound:hover {
+    animation: pulse-1 1.5s infinite; /* Animate for 1.5 seconds on hover */
+  }
+  .nav__sound span {
+    margin-right: 1rem;
+    color: var(--color-2);
+    font-weight: var(--fw-2);
+  }
+  .nav__sound span:hover {
+    color: var(--color-3);
+  }
+}
+/*RESPONSIVE PARA PC  */
+@media only screen and (min-width: 601px) {.nav-menu-btn {
   background-image: url(../img/pokebola_logo.svg);
   background-repeat: no-repeat;
   height: 4rem;
@@ -64,4 +139,5 @@
 }
 .nav__sound span:hover {
   color: var(--color-3);
+}
 }
