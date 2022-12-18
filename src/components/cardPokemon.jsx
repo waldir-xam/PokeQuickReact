@@ -1,8 +1,21 @@
 import React from "react";
 
-const CardPokemon = ({ medida, peso, img, nombre, tipo, especial }) => {
+const CardPokemon = ({
+  medida,
+  peso,
+  img,
+  nombre,
+  tipo,
+  especial,
+  setEstado,
+}) => {
   return (
-    <div className="img_pokemon">
+    <div
+      className="img_pokemon"
+      onClick={() => {
+        console.log(setEstado);
+      }}
+    >
       <div className="img_pokemon_titulo">
         <h6>{medida}m</h6>
         <h6>{peso}kg</h6>

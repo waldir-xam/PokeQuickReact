@@ -247,6 +247,16 @@ background-color: white;
       top: 5rem;
       left: 5rem;
   }
+  .img_pokemon{
+    height: 60%;
+    width: 100%;
+  }
+  .container__caracteristicas {
+    width: 20vw;
+    top: 5rem;
+    left: 0rem;
+  }
+
 }
 
 @media (max-width:567px) {
@@ -269,7 +279,9 @@ background-color: white;
       top: 5rem;
       left: 10rem;
   }
-
+.container__caracteristicas__button{
+  padding: 0.5rem 1rem;
+}
   .body__container nav {
       padding: 0.5rem;
   }
@@ -304,6 +316,19 @@ background-color: white;
   .footer {
       display: none;
   }
+  .img_pokemon{
+    height: 80%;
+    width: 100%;
+  }
+  .polka-bg {
+    background-image: radial-gradient(rgb(0, 0, 0) 18%, transparent 18%),
+      radial-gradient(rgb(0, 0, 0) 18%, transparent 18%);
+    background-position: 0px 0px, 8px 8px;
+    background-size: 16px 16px;
+    background-color: var(--color-1);
+    animation: diagonal-move-anim 8s linear infinite alternate;
+    height: 200vh;
+  }
 
 }
 
@@ -331,6 +356,10 @@ background-color: white;
       top: 5rem;
       left: 5rem;
       display: none;
+  }
+  .img_pokemon{
+    height: 80%;
+      width: 100%;
   }
 
 }

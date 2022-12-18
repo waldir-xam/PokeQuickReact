@@ -12,6 +12,8 @@ const Part2 = () => {
   const [datos, setDatos] = useState([]);
   const [search, setSearch] = useState("");
 
+  const [estado, setEstado] = useState(false);
+
   // const fetchPoke = async (pokemon) => {
   //   const data = await searchPokemon(pokemon);
   //   console.log(data);
@@ -77,7 +79,13 @@ const Part2 = () => {
                 return <ColeccionPokemon key={index} pokemon={resultado.img} />;
               })}
             </div>
-            <CardCaracteristicas vida={30} ataque={50} defensa={60} />
+            <CardCaracteristicas
+              estado={estado}
+              cambiarEstado={setEstado}
+              vida={30}
+              ataque={50}
+              defensa={70}
+            />
             <div className="container2__entrenador">
               <img src="src/img/entrenador.svg" alt="" />
             </div>
