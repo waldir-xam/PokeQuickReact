@@ -12,9 +12,7 @@ function AudioPlayerButton() {
         ref={audioPlayer}
         autoPlay
       />
-      <button onClick={() => audioPlayer.current.audioEl.play()}>
-        <i className="fa-solid fa-play"></i>
-      </button>
+      <button onClick={() => audioPlayer.current.audioEl.play()}></button>
     </div>
   );
 }
