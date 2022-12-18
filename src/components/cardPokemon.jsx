@@ -1,19 +1,14 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/UserContext";
 
-const CardPokemon = ({
-  medida,
-  peso,
-  img,
-  nombre,
-  tipo,
-  especial,
-  setEstado,
-}) => {
+const CardPokemon = ({ medida, peso, img, nombre, tipo, especial }) => {
+  const { datosCon, setDatosCon } = useContext(AuthContext);
   return (
     <div
       className="img_pokemon"
       onClick={() => {
-        console.log(setEstado);
+        setDatosCon(!datosCon);
       }}
     >
       <div className="img_pokemon_titulo">

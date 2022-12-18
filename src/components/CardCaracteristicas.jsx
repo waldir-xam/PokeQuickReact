@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardCaracteristicas = (props, estado, cambiarEstado) => {
+const CardCaracteristicas = (props) => {
   return (
     <div className="container__caracteristicas">
       <div className="container__caracteristicas__item">

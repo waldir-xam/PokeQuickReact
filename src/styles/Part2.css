@@ -320,6 +320,7 @@ background-color: white;
     height: 80%;
     width: 100%;
   }
+
   .polka-bg {
     background-image: radial-gradient(rgb(0, 0, 0) 18%, transparent 18%),
       radial-gradient(rgb(0, 0, 0) 18%, transparent 18%);
@@ -360,6 +361,15 @@ background-color: white;
   .img_pokemon{
     height: 80%;
       width: 100%;
+  }
+  .polka-bg {
+    background-image: radial-gradient(rgb(0, 0, 0) 18%, transparent 18%),
+      radial-gradient(rgb(0, 0, 0) 18%, transparent 18%);
+    background-position: 0px 0px, 8px 8px;
+    background-size: 16px 16px;
+    background-color: var(--color-1);
+    animation: diagonal-move-anim 8s linear infinite alternate;
+    height: 150vh;
   }
 
 }

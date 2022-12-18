@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../styles/Part2.css";
 import FooterTwo from "../components/FooterTwo";
 import searchPokemon from "../services/pokeapi";
@@ -7,7 +7,13 @@ import CardPokemon from "../components/cardPokemon";
 import dataPokemon, { getLocal } from "../services/config";
 import ColeccionPokemon from "../components/coleccionPokemon";
 import CardCaracteristicas from "../components/CardCaracteristicas";
+import { AuthContext } from "../context/UserContext";
+
 const Part2 = () => {
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  const { datosCon } = useContext(AuthContext);
   const [newLocal, setNewLocal] = useState([]);
   const [datos, setDatos] = useState([]);
   const [search, setSearch] = useState("");
@@ -79,13 +85,13 @@ const Part2 = () => {
                 return <ColeccionPokemon key={index} pokemon={resultado.img} />;
               })}
             </div>
-            <CardCaracteristicas
-              estado={estado}
-              cambiarEstado={setEstado}
-              vida={30}
-              ataque={50}
-              defensa={70}
-            />
+            {datosCon && (
+              <CardCaracteristicas
+                vida={getRandomInt(100)}
+                ataque={getRandomInt(99)}
+                defensa={getRandomInt(98)}
+              />
+            )}
             <div className="container2__entrenador">
               <img src="src/img/entrenador.svg" alt="" />
             </div>
