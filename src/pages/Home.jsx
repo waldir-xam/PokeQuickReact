@@ -65,7 +65,7 @@ const Home = () => {
         </div>
         <Link to="/stage2">
           <button className="nextStep">
-            Siguiente <i class="fa-solid fa-arrow-right"></i>
+            Siguiente <i className="fa-solid fa-arrow-right"></i>
           </button>
         </Link>
         <FooterOne />
