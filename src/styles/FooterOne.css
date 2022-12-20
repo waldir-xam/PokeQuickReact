@@ -10,9 +10,21 @@
   padding: 1rem;
   border-radius: 2rem;
   margin: 1.5rem 0 1.5rem 0;
-  
 }
 .trainer-1-home:hover,
 .trainer-2-home:hover {
   animation: pulse-2 1.5s infinite; /* Animate for 1.5 seconds on hover */
+}
+
+/* RESPONSIVE SMARTPHONE */
+
+@media only screen and (max-width: 600px) {
+  .main__container2-home {
+    width: 100%;
+    text-align: center;
+    color: var(--color-2);
+  }
+  .footer-container-home {
+    height: 100%;
+  }
 }

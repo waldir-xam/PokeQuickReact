@@ -6,7 +6,7 @@ import "../styles/FooterOne.css";
 /* las clases llevan '-home' porque este footerONe esta relacionado al HOME */
 const FooterOne = () => {
   return (
-    <div>
+    <div className="footer-container-home">
       <div className="main__container2-home">
         <h3>Escoge tu entrenador</h3>
         <div className="container2-home">

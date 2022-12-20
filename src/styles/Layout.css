@@ -5,7 +5,7 @@
   background-size: 16px 16px;
   background-color: var(--color-1);
   animation: diagonal-move-anim 8s linear infinite alternate;
-  height: 105vh;
+  min-height: 100vh;
 }
 
 @media only screen and (max-width: 600px) {
@@ -16,7 +16,7 @@
     background-size: 16px 16px;
     background-color: var(--color-1);
     animation: diagonal-move-anim 8s linear infinite alternate;
-    height: 100%;
+    min-height: 100vh;
   }
 }
 @keyframes diagonal-move-anim {
