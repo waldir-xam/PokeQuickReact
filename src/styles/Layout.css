@@ -19,6 +19,9 @@
     min-height: 100vh;
   }
 }
+
+
+
 @keyframes diagonal-move-anim {
   0% {
     background-position: 0px 0px, 8px 8px;
