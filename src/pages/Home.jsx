@@ -63,7 +63,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Link to={Part2}>
+        <Link to="/stage2">
           <button className="nextStep">
             Siguiente <i className="fa-solid fa-arrow-right"></i>
           </button>
