@@ -62,7 +62,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <button className="nextStep">Siguiente <i class="fa-solid fa-arrow-right"></i></button> <FooterOne />
+        <button className="nextStep">Siguiente <i className="fa-solid fa-arrow-right"></i></button> <FooterOne />
         <div className="aside-left-home">
           <img src={asideOne} className="aside-img-home" />
           <img src={asideTwo} className="aside-img-home" />
