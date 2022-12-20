@@ -6,8 +6,8 @@ import Modales from "../components/Modales";
 import pokelogo from "../img/poke-logo.png";
 import pokebola from "../img/pokebola_logo.svg";
 import "../styles/Header.css";
-import AudioPlayer from "../components/AudioPlayer"
-
+/* import AudioPlayer from "../components/AudioPlayer"
+ */
 const Header = () => {
   const [mostrar, setMostrar] = useState(false);
   const [verContador, setVerContador] = useState(false);
@@ -36,7 +36,7 @@ const Header = () => {
         </figure>
         <div className="nav__sound">
           <span>BGM ON/OFF</span>
-         <AudioPlayer/>
+   {/*       <AudioPlayer/> */}
         </div>
       </div>
     </div>
