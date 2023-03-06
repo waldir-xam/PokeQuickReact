@@ -8,8 +8,44 @@
   --fw-2: 600;
   --fw-3: 700;
 }
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;500&family=Saira+Condensed:wght@200;300;400;500;600;700&family=Saira:wght@200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RESETEO DE CSS */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }

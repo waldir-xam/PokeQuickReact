@@ -2,7 +2,7 @@ import React from "react";
 import trainerOne from "../img/trainer-red.svg";
 import trainerTwo from "../img/trainer-blue.svg";
 
-import "../styles/FooterOne.css";
+
 /* las clases llevan '-home' porque este footerONe esta relacionado al HOME */
 const FooterOne = () => {
   return (
