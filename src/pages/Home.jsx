@@ -9,6 +9,8 @@ import asideTwo from "../img/aside2.png";
 import asideThree from "../img/aside3.png";
 import asideFour from "../img/aside4.png";
 import { Link } from "react-router-dom";
+import { Icon } from "../components/Icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   return (
@@ -16,7 +18,7 @@ const Home = () => {
       <h2 className="py-3 text-center text-3xl font-bold">
         Selecciona un Pokemon
       </h2>
-      <div className="flex flex-col w-full">
+      <div className="flex w-full flex-col">
         <div className="mx-auto flex flex-row gap-4 lg:w-full lg:max-w-7xl lg:px-5">
           {/* ICONS ASIDE */}
 
@@ -33,7 +35,7 @@ const Home = () => {
               <img className="profesor-home" src={profesor} />
 
               {/* MENSAJE AL SELECCIONAR POKEMON */}
-              <div className="absolute right-0 top-20 flex  w-5/12 animate-pulso rounded-xl bg-pokewhite p-3 text-center text-sm text-black md:top-56 md:w-4/12 lg:right-20 lg:w-2/12 lg:p-4 lg:text-base">
+              <div className="top-33 absolute right-0 flex  w-5/12 animate-pulso rounded-xl bg-pokewhite p-3 text-center text-sm text-black md:top-56 md:w-4/12 lg:right-20 lg:w-2/12 lg:p-4 lg:text-base">
                 <span>
                   Quieres elegir a <a className="text-pokered">Charmander</a>?
                   Es un Pokemon tipo <a className="text-pokered">Fuego</a>
@@ -84,8 +86,8 @@ const Home = () => {
         </div>
         {/* BOTON PARA PT 2 */}
         <Link to="/stage2">
-          <button className="nextStep">
-            Siguiente <i className="fa-solid fa-arrow-right"></i>
+          <button className="absolute right-0 bottom-80 flex  w-3/12 animate-pulso items-center justify-center rounded-xl bg-pokewhite p-3 text-center text-sm text-black hover:animate-shake md:bottom-78 md:w-3/12 lg:right-20 lg:w-2/12 lg:p-4 lg:text-base">
+            Siguiente <Icon css="icon" icon={faArrowRight} />
           </button>
         </Link>
       </div>
