@@ -63,7 +63,7 @@ const Home = () => {
         </div>
         {/* fin pokeballs */}
         {/* contenedor , selected pokeball/pokemon */}
-        <div className="grid w-9/12 grid-cols-3 gap-2">
+        <div className="grid w-9/12 grid-cols-3 gap-4">
           <div className="col-span-2 flex w-auto justify-end self-center">
             <h2 className="text-ri rounded-t-3xl rounded-bl-3xl bg-pokeblack py-3 text-center text-lg font-bold text-pokewhite lg:w-10/12 lg:text-3xl">
               Selecciona un Pokemon
