@@ -23,6 +23,16 @@ const Header = () => {
   const menuCloseBtn = document.querySelector(".menu-close-btn");
   const offcanvasMenu = document.querySelector(".offcanvas-menu");
 
+  const handleBgColorChange = () => {
+    if (bgColor === "bg-transparent") {
+      setPrevBgColor(bgColor);
+      setBgColor("bg-pokeblack");
+    } else {
+      setBgColor(prevBgColor);
+      setPrevBgColor(null);
+    }
+  };
+
   return (
     <header className="mx-auto flex w-full flex-row justify-between bg-black px-4">
       <div className="mx-auto flex w-11/12 flex-row items-center justify-between md:w-full lg:mx-auto lg:max-w-7xl lg:justify-between lg:p-2">
@@ -31,7 +41,10 @@ const Header = () => {
           <button
             className="animate animate-pulso-custom h-12 w-12 animate-pulso rounded bg-pokeball bg-cover bg-no-repeat duration-300 hover:animate-shake"
             id="menuBtn"
-            onClick={() => setShowMenu(!showMenu)}
+            onClick={() => {
+              setShowMenu(!showMenu);
+              handleBgColorChange();
+            }}
           >
             {showMenu ? (
               <button className="menu-close-btn" css="icon" />
@@ -106,8 +119,8 @@ const Header = () => {
             <img className="h-14" src={pokelogo} alt="logo" />
           </Link>
         </figure>
-        <div className="flex animate-pulso flex-row items-center font-title font-medium  text-white hover:text-black">
-          <span className="hidden px-2 font-semibold hover:text-pokered md:block lg:block xl:block duration-300">
+        <div className="flex animate-pulso cursor-pointer flex-row items-center font-title  font-medium text-white hover:text-black">
+          <span className="hidden px-2 font-semibold duration-300 hover:text-pokered md:block lg:block xl:block">
             <Icon css="icon" icon={faVolumeHigh} />
           </span>
         </div>

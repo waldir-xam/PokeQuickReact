@@ -13,13 +13,13 @@ const Footer = () => {
       <div className="mx-auto flex w-full flex-row justify-between p-2 lg:max-w-7xl">
         <span className="">All rights reserved. Made by Team Hackerman</span>
         <ul className="flex flex-row gap-4" style={{ fontSize: "1.2em" }}>
-          <li className="duration-300 hover:text-pokered">
+          <li className="duration-300 hover:text-pokered cursor-pointer">
             <Icon css="icon" icon={faFacebook} />
           </li>
-          <li className="duration-300 hover:text-pokered">
+          <li className="duration-300 hover:text-pokered cursor-pointer">
             <Icon css="icon" icon={faInstagram} />
           </li>
-          <li className="duration-300 hover:text-pokered">
+          <li className="duration-300 hover:text-pokered cursor-pointer">
             <Icon css="icon" icon={faTwitter} />
           </li>
         </ul>

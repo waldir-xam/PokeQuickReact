@@ -69,6 +69,7 @@ module.exports = {
         pulso2: "pulso2 1s infinite",
         shake: "shake 0.8s infinite alternate",
         pulso3: "pulso3 3.5s infinite",
+        bgtransition: "background-color 0.5s ease-in-out",
       },
     },
   },
