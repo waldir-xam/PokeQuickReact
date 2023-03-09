@@ -28,7 +28,7 @@ const Home = () => {
         </div>
       </div>
       {/* nuevo contenedor UI */}
-      <div className="flex flex-row justify-center gap-24">
+      <div className="flex flex-row justify-center lg:gap-24 gap-5 mx-auto px-4 items-center">
         {/* pokeballs */}
         <div className=" flex flex-col justify-center gap-10">
           <div className="hover:animate-shake">
@@ -70,7 +70,7 @@ const Home = () => {
         </div>
         {/* fin pokeballs */}
         {/* contenedor , selected pokeball/pokemon */}
-        <div className="grid grid-cols-3 grid-rows-2 gap-4">
+        <div className="grid grid-cols-3 grid-rows-2 lg:gap-4 gap-3">
           <div className="h-20 w-32 bg-pokeblue">TEXT MSG</div>
           <div className="h-20 w-32 bg-pokeblue">TEXT MSG</div>
           <div className="h-20 w-32 bg-pokeblue">OAK</div>
