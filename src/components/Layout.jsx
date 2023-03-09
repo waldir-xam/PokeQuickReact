@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   const handleBgColorChange = () => {
     if (bgColor === "bg-transparent") {
       setPrevBgColor(bgColor);
-      setBgColor("bg-pokeblack");
+      setBgColor("bg-pokeblack duration-500");
     } else {
       setBgColor(prevBgColor);
       setPrevBgColor(null);
