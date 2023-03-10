@@ -36,31 +36,31 @@ const FooterOne = () => {
           </div>
         </div>
         {/* ENTRANADORES */}
-        <div className=" flex h-auto flex-row gap-3 overflow-y-hidden lg:gap-5">
-          <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
+        <div className=" flex h-auto flex-row gap-3 lg:gap-5">
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
             <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
             <h4 className="py-4">Red1</h4>
           </div>
-          <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
             <img src={trainerTwo} alt="trainer" className="h-18 lg:h-24" />
             <h4 className="py-4">Blue2</h4>
           </div>
-          <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
             <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
             <h4 className="py-4">Red3</h4>
           </div>
-          <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
             <img src={trainerTwo} alt="trainer" className="h-18 lg:h-24" />
             <h4 className="py-4">Blue4</h4>
           </div>
-          <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
+          {/*         <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
             <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
             <h4 className="py-4">Red5</h4>
           </div>
           <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
             <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
             <h4 className="py-4">Red6</h4>
-          </div>
+          </div> */}
         </div>
         {/* ENTRANADORES */}
       </div>

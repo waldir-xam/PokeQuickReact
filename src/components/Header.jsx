@@ -34,7 +34,7 @@ const Header = () => {
   };
 
   return (
-    <header className="mx-auto flex w-full flex-row justify-between bg-black px-4">
+    <header className="mx-auto flex w-full flex-row justify-between bg-black px-4 z-20">
       <div className="mx-auto flex w-11/12 flex-row items-center justify-between md:w-full lg:mx-auto lg:max-w-7xl lg:justify-between lg:p-2">
         {/* mx-auto flex w-full flex-row justify-between p-2 lg:max-w-7xl */}
         <div>
