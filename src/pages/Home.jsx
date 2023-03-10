@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import "../styles/Home.css";
 import profesor from "../img/profesor.svg";
 import pokeballUp from "../img/pokeball-up.svg";
 import pokeballDown from "../img/pokeball-down.svg";
-import FooterOne from "../components/FooterOne";
+import trainerOne from "../img/trainer-red.svg";
+import trainerTwo from "../img/trainer-blue.svg";
+import { Link } from "react-router-dom";
+import { Icon } from "../components/Icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [selectedPokemon, setSelectedPokemon] = useState("");
@@ -16,7 +19,7 @@ const Home = () => {
     <div className="mx-auto w-full flex-grow font-title text-pokewhite lg:w-10/12 lg:max-w-7xl">
       <div className="mx-auto flex flex-row items-center justify-center gap-1 px-2 py-6 lg:gap-24">
         {/* pokeballs */}
-        <div className=" flex flex-col justify-center gap-10 px-2 border-2">
+        <div className=" flex flex-col justify-center gap-10">
           <div
             className={`hover:animate-shake ${
               selectedPokemon === "pokemonOne"
@@ -80,14 +83,15 @@ const Home = () => {
         </div>
         {/* fin pokeballs */}
         {/* contenedor , selected pokeball/pokemon */}
-        <div className="grid lg:w-9/12 grid-cols-3 lg:gap-4 gap-2 w-full border-2">
+        <div className="grid w-full grid-cols-3 gap-2 lg:w-9/12 lg:gap-0">
           <div className="col-span-2 flex w-auto justify-end self-center">
-            <h2 className="text-ri rounded-t-3xl rounded-bl-3xl bg-pokeblack py-3 text-center text-lg font-bold text-pokewhite lg:w-10/12 lg:text-3xl">
-              Selecciona un Pokemon
+            <h2 className="absolute right-16 top-24 rounded-t-3xl rounded-bl-3xl bg-pokeblack px-4 py-2 text-center text-lg font-bold text-pokewhite md:relative md:-top-5 md:-right-20 md:text-2xl lg:relative lg:-top-10 lg:-right-10 lg:w-8/12 lg:text-3xl">
+              Bienvenido,
+              <br /> escoge tu pokemon
             </h2>
           </div>
-          <div className="row-span-2 flex justify-center">
-            <img className="lg:w-11/12 w-full" src={profesor} />
+          <div className="row-span-2 flex justify-center ">
+            <img className="w-full lg:w-11/12" src={profesor} />
           </div>
           <div className=" flex flex-col items-center justify-center">
             <div className="w-24 hover:animate-shake lg:w-28">
@@ -112,10 +116,67 @@ const Home = () => {
             {/*             *SELECTED POKEMON*
              */}
           </div>
+          {/* DIALOGO DE ESCOGER POKEMON */}
+          <div className="col-span-3 flex items-center justify-end self-center align-middle lg:w-full lg:py-4">
+            <div className="flex animate-pulso3 justify-center rounded-xl border-2 border-black bg-pokewhite p-4 text-center text-sm font-normal text-black md:text-lg lg:col-span-3 lg:text-lg">
+              Quieres elegir a <a className="px-1 text-pokered">Charmander</a>?
+              Es un Pokemon tipo
+              <a className="px-1 text-pokered">Fuego</a>
+            </div>
+          </div>
+          {/* FIN DIALOGO DE ESCOGER POKEMON */}
         </div>
         {/* fin contenedor , selected pokeball/pokemon */}
       </div>
-      <FooterOne />
+
+      {/* FOOTER HOME 1 */}
+      <div className="mx-auto flex w-10/12 flex-row flex-wrap justify-center gap-4 rounded-2xl py-6 font-semibold">
+        <div className="m-auto flex w-full flex-row items-center md:justify-between">
+          <h2 className="w-full px-6 text-left text-xl font-semibold text-pokewhite md:text-3xl lg:text-3xl">
+            Escoge tu entrenador
+          </h2>
+          <div className="flex w-full flex-row items-center justify-center gap-2 lg:gap-6">
+            <div className="flex w-full justify-end md:w-11/12 lg:w-full">
+              {/* BOTON PARA PT 2 */}
+              <Link to="/stage2">
+                <button className="flex w-full animate-pulso3 items-center justify-center rounded-xl bg-pokegreen px-6 py-3 text-center font-misc text-sm font-bold text-pokewhite hover:animate-shake md:w-11/12 lg:w-full lg:p-4  lg:text-lg border-2 border-pokeblack lg:px-2">
+                  <span className="px-2">SIGUIENTE</span>
+                  <Icon css="icon" icon={faArrowRight} />
+                </button>
+              </Link>
+              {/* FIN BOTON PARA PT 2 */}
+            </div>
+          </div>
+        </div>
+        {/* ENTRANADORES */}
+        <div className=" flex h-auto flex-row gap-3 lg:gap-5">
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
+            <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
+            <h4 className="py-4">Red1</h4>
+          </div>
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
+            <img src={trainerTwo} alt="trainer" className="h-18 lg:h-24" />
+            <h4 className="py-4">Blue2</h4>
+          </div>
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
+            <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
+            <h4 className="py-4">Red3</h4>
+          </div>
+          <div className="flex w-4/12 cursor-pointer flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4">
+            <img src={trainerTwo} alt="trainer" className="h-18 lg:h-24" />
+            <h4 className="py-4">Blue4</h4>
+          </div>
+          {/*         <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
+            <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
+            <h4 className="py-4">Red5</h4>
+          </div>
+          <div className="flex w-4/12 flex-col items-center justify-center rounded-3xl bg-pokeblack p-3 duration-100 hover:animate-pulso2 lg:p-4 cursor-pointer">
+            <img src={trainerOne} alt="trainer" className="h-18 lg:h-24" />
+            <h4 className="py-4">Red6</h4>
+          </div> */}
+        </div>
+        {/* ENTRANADORES */}
+      </div>
     </div>
   );
 };

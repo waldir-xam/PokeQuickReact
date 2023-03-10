@@ -21,6 +21,12 @@ module.exports = {
         pokeorange: "#FF7230",
         pokeblue: "#4AA9FF",
         pokegreen: "#54DC25",
+        gradBut1:"",
+        gradBut2:"",
+        grad3:"",
+        grad4:"",
+        grad5:"",
+
       },
       keyframes: {
         pulso: {
