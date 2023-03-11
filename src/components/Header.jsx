@@ -1,7 +1,11 @@
 import {
   faBars,
+  faPause,
+  faPlay,
   faTimes,
   faVolumeHigh,
+  faVolumeMute,
+  faVolumeUp,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
@@ -32,11 +36,14 @@ const Header = () => {
       setPrevBgColor(null);
     }
   };
-
+  /* AUDIO */
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audio = new Audio("https://vgmsite.com/soundtracks/pokemon-game-boy-pok-mon-sound-complete-set-play-cd/vfywpihuos/1-01.%20Opening.mp3");
+  /* FIN AUDIO */
   return (
-    <header className="mx-auto flex w-full flex-row justify-between bg-black px-4 z-20">
+    <header className="z-20 mx-auto flex w-full flex-row justify-between bg-black px-4">
       <div className="mx-auto flex w-11/12 flex-row items-center justify-between md:w-full lg:mx-auto lg:max-w-7xl lg:justify-between lg:p-2">
-        {/* mx-auto flex w-full flex-row justify-between p-2 lg:max-w-7xl */}
         <div>
           <button
             className="animate animate-pulso-custom h-12 w-12 animate-pulso rounded bg-pokeball bg-cover bg-no-repeat duration-300 hover:animate-shake"
@@ -72,30 +79,35 @@ const Header = () => {
               )}
             </button>
           </span>
-
           <figure className="w-full">
-            <img className="mx-auto h-16" src={pokelogo} alt="logo" />
+            <Link to="/">
+              <img className="mx-auto h-16" src={pokelogo} alt="logo" />
+            </Link>
           </figure>
           <ul className=" flex w-full  flex-col items-start py-4 md:justify-center lg:flex-col">
-            <li className="w-full py-5 pl-12 text-left duration-300 hover:bg-black hover:text-pokewhite md:mr-8">
-              <Link to="/" className="">
+            <Link to="/" className=" w-full">
+              <li className="w-full py-5 pl-12 text-left duration-300 hover:bg-black hover:text-pokewhite md:mr-8">
                 Inicio
-              </Link>
-            </li>
-            <li className="w-full py-5 pl-12 text-left duration-300 hover:bg-black hover:text-pokewhite md:mr-8">
-              <Link to="nosotros" className="">
+              </li>
+            </Link>
+            <Link to="/mypokemons" className="w-full">
+              <li className="w-full py-5 pl-12 text-left duration-300 hover:bg-black hover:text-pokewhite md:mr-8">
                 Mis Pokemon
-              </Link>
-            </li>
-            <li className="w-full py-5 pl-12 text-left duration-300 hover:bg-black hover:text-pokewhite md:mr-8">
-              <Link to="servicios" className="">
+              </li>
+            </Link>
+
+            <Link to="pokedex" className="w-full">
+              <li className="w-full py-5 pl-12 text-left duration-300 hover:bg-black hover:text-pokewhite md:mr-8">
                 Pokedex
-              </Link>
+              </li>
+            </Link>
+          </ul>
+          <ul className=" flex w-full flex-col justify-center gap-3">
+            <li className="mx-auto w-6/12 rounded-2xl border-2 bg-transparent p-2 px-4 text-center duration-300 hover:bg-black hover:text-pokered">
+              <Link to="/login">Iniciar Sesion</Link>
             </li>
-            <li className="w-full py-5 pl-12 text-left duration-300 hover:bg-black hover:text-pokewhite md:mr-8">
-              <Link to="contacto" className="">
-                Contacto
-              </Link>
+            <li className="mx-auto w-6/12 rounded-2xl border-2 bg-transparent p-2 px-4 text-center duration-300 hover:bg-black hover:text-pokered">
+              <Link to="/signup">Registrate</Link>
             </li>
           </ul>
           <ul className="mx-auto flex w-9/12 flex-row justify-around py-4 md:w-6/12 md:justify-around lg:w-7/12 lg:justify-around">
@@ -119,10 +131,29 @@ const Header = () => {
             <img className="h-14" src={pokelogo} alt="logo" />
           </Link>
         </figure>
-        <div className="flex animate-pulso cursor-pointer flex-row items-center font-title  font-medium text-white hover:text-black">
-          <span className="hidden px-2 font-semibold duration-300 hover:text-pokered md:block lg:block xl:block">
-            <Icon css="icon" icon={faVolumeHigh} />
-          </span>
+        <div className="flex animate-pulso cursor-pointer flex-row items-center font-title  font-medium text-white">
+          <div className="flex gap-4 font-semibold duration-300">
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="hover:text-pokered"
+            >
+              {isPlaying ? (
+                <Icon css="icon" icon={faPause} />
+              ) : (
+                <Icon css="icon" icon={faPlay} />
+              )}
+            </button>
+            <button
+              onClick={() => setIsMuted(!isMuted)}
+              className="hover:text-pokered"
+            >
+              {isMuted ? (
+                <Icon css="icon" icon={faVolumeMute} />
+              ) : (
+                <Icon css="icon" icon={faVolumeUp} />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </header>
