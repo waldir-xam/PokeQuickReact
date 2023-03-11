@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [usuario, setUsuario] = useState("");
+  const [contrasena, setContrasena] = useState("");
+
+  const handleSubmit = () => {
+    fetch("http://127.0.0.1:5000/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ usuario, contrasena }),
+    })
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  };
+
   return (
     <div className="flex flex-grow items-center">
       <form className="mx-auto mt-8 w-full max-w-sm">
@@ -19,6 +33,8 @@ const Login = () => {
               id="email"
               type="email"
               placeholder="AshMostaza"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}
             />
           </div>
         </div>
@@ -37,6 +53,8 @@ const Login = () => {
               id="password"
               type="password"
               placeholder="*************"
+              value={contrasena}
+              onChange={(e) => setContrasena(e.target.value)}
             />
           </div>
         </div>
@@ -46,6 +64,7 @@ const Login = () => {
             <button
               className="focus:shadow-outline rounded-2xl border-2 border-pokeblack bg-black py-2 px-4 font-bold text-white shadow hover:bg-pokered focus:outline-none w-full"
               type="button"
+              onClick={handleSubmit}
             >
               Iniciar Sesión
             </button>

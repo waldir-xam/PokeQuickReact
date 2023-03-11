@@ -3,7 +3,6 @@ import {
   faPause,
   faPlay,
   faTimes,
-  faVolumeHigh,
   faVolumeMute,
   faVolumeUp,
 } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +14,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import pokelogo from "../img/poke-logo.png";
 import { Icon } from "./Icons";
 import { Link } from "react-router-dom";
@@ -25,7 +24,10 @@ const Header = () => {
 
   const menuOpenBtn = document.querySelector(".menu-open-btn");
   const menuCloseBtn = document.querySelector(".menu-close-btn");
+
   const offcanvasMenu = document.querySelector(".offcanvas-menu");
+
+  const offcanvasMenuRef = useRef(null);
 
   const handleBgColorChange = () => {
     if (bgColor === "bg-transparent") {
@@ -39,7 +41,31 @@ const Header = () => {
   /* AUDIO */
   const [isMuted, setIsMuted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const audio = new Audio("https://vgmsite.com/soundtracks/pokemon-game-boy-pok-mon-sound-complete-set-play-cd/vfywpihuos/1-01.%20Opening.mp3");
+  const audioRef = useRef(null);
+  const audio = useRef(new Audio());
+
+  useEffect(() => {
+    audio.current.src =
+      "https://vgmsite.com/soundtracks/pokemon-game-boy-pok-mon-sound-complete-set-play-cd/vfywpihuos/1-01.%20Opening.mp3";
+  }, []);
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+/*   useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]);
+ */
   /* FIN AUDIO */
   return (
     <header className="z-20 mx-auto flex w-full flex-row justify-between bg-black px-4">
@@ -68,7 +94,7 @@ const Header = () => {
         >
           <span className="absolute top-4 right-6">
             <button
-              className="menu-close-btn hover:text-yellow-mam cursor-pointer bg-pokered text-white duration-300 hover:text-black lg:block"
+              className="menu-close-btn cursor-pointer bg-pokered text-white duration-300 hover:text-black lg:block"
               style={{ fontSize: "1.8em" }}
               onClick={() => setShowMenu(!showMenu)}
             >
@@ -133,6 +159,7 @@ const Header = () => {
         </figure>
         <div className="flex animate-pulso cursor-pointer flex-row items-center font-title  font-medium text-white">
           <div className="flex gap-4 font-semibold duration-300">
+            {/* PLAY/PAUSE */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
               className="hover:text-pokered"
@@ -143,6 +170,7 @@ const Header = () => {
                 <Icon css="icon" icon={faPlay} />
               )}
             </button>
+            {/* MUTE/SOUND */}
             <button
               onClick={() => setIsMuted(!isMuted)}
               className="hover:text-pokered"

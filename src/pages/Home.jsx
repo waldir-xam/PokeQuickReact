@@ -84,7 +84,7 @@ const Home = () => {
         </div>
         {/* fin pokeballs */}
         {/* contenedor , selected pokeball/pokemon */}
-        <div className="grid w-full grid-cols-2 gap-2  pt-16 lg:w-9/12 lg:gap-0">
+        <div className="grid w-full grid-cols-2 gap-0  px-1 pt-16 lg:w-9/12 lg:gap-0">
           <div className="col-span-1 flex w-auto justify-end self-center">
             <h2 className="absolute right-24 top-20 rounded-t-3xl rounded-bl-3xl bg-pokeblack px-4 py-2 text-center font-title text-lg font-bold text-pokewhite md:relative md:-top-5 md:-right-40 md:text-2xl lg:relative lg:-top-10 lg:-right-10 lg:w-11/12 lg:text-3xl">
               Bienvenido,
