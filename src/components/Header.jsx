@@ -12,7 +12,6 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import pokelogo from "../img/poke-logo.png";
@@ -58,7 +57,7 @@ const Header = () => {
     setIsPlaying(!isPlaying);
   };
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();
     } else {
@@ -72,17 +71,18 @@ const Header = () => {
       <div className="mx-auto flex w-11/12 flex-row items-center justify-between md:w-full lg:mx-auto lg:max-w-7xl lg:justify-between lg:p-2">
         <div>
           <button
-            className="animate animate-pulso-custom h-12 w-12 animate-pulso rounded bg-pokeball bg-cover bg-no-repeat duration-300 hover:animate-shake"
+            className="animate animate-pulso-custom animate-pulso rounded bg-cover bg-no-repeat text-white duration-300 hover:animate-shake"
             id="menuBtn"
+            style={{ fontSize: "1.5em" }}
             onClick={() => {
               setShowMenu(!showMenu);
               handleBgColorChange();
             }}
           >
             {showMenu ? (
-              <button className="menu-close-btn" css="icon" />
+              <Icon className="menu-close-btn" css="icon" icon={faTimes} />
             ) : (
-              <button className="menu-open-btn" css="icon" />
+              <Icon className="menu-open-btn" css="icon" icon={faBars} />
             )}
           </button>
         </div>

@@ -21,12 +21,11 @@ module.exports = {
         pokeorange: "#FF7230",
         pokeblue: "#4AA9FF",
         pokegreen: "#54DC25",
-        gradBut1:"",
-        gradBut2:"",
-        grad3:"",
-        grad4:"",
-        grad5:"",
-
+        gradBut1: "",
+        gradBut2: "",
+        grad3: "",
+        grad4: "",
+        grad5: "",
       },
       keyframes: {
         pulso: {
@@ -68,14 +67,20 @@ module.exports = {
           "90%": { transform: "translate(1px, 2px) rotate(0deg)" },
           "100%": { transform: "translate(1px, -2px) rotate(-1deg)" },
         },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-25deg)" },
+          "50%": { transform: "rotate(25deg)" },
+        },
       },
       animation: {
         pulso: "pulso 3.2s ease-in-out infinite",
         pulso1: "pulso1 1.5s infinite",
         pulso2: "pulso2 1s infinite",
         shake: "shake 0.8s infinite alternate",
+        shakeNop: "shake 0.5s alternate",
         pulso3: "pulso3 3.5s infinite",
         bgtransition: "background-color 0.5s ease-in-out",
+        wiggle: "wiggle 200ms ease-in-out",
       },
     },
   },
