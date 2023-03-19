@@ -56,7 +56,9 @@ const Home = () => {
     if (selectedPokemon) {
       fetch(`https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`)
         .then((response) => response.json())
-        .then((data) => setSelectedPokemonImage(data.sprites.front_default));
+        .then((data) =>
+          setSelectedPokemonImage(data.sprites.other.dream_world.front_default)
+        );
     }
   }, [selectedPokemon]);
 
@@ -139,10 +141,10 @@ const Home = () => {
           <div className=" col-span-1 flex h-auto w-auto flex-col items-center justify-center">
             <div className="flex h-40 w-40 items-center rounded-3xl bg-pokeblack md:h-60 md:w-60  lg:h-64 lg:w-64 ">
               <img
-              className="w-40 h-40 md:w-60 md:h-60 lg:w-64 lg:h-64"
+                className="flex h-40 w-40 items-center justify-center p-6 text-center text-lg font-semibold text-zinc-400 md:h-60 md:w-60 lg:h-64 lg:w-64"
                 id="selectedPokemon"
                 src={getSelectedPokemonImage()}
-                alt="Pokemon seleccionado"
+                alt="CHOOSE A POKEMON"
               />
             </div>
           </div>
@@ -151,11 +153,11 @@ const Home = () => {
             <div className="w-9/12animate-pulso3 flex flex-wrap justify-center rounded-xl border-2 border-black bg-pokewhite p-4 text-center text-base font-normal text-black md:relative md:right-44 md:text-lg lg:col-span-3 lg:text-lg">
               <span>
                 Quieres elegir a
-                <a className="px-1 text-pokered" id="selectedPokemonColor">
+                <span className="px-1 text-pokered" id="selectedPokemonColor">
                   Charmander
-                </a>
+                </span>
                 ?<br /> Es un Pokemon tipo
-                <a className="px-1 text-pokered">Fuego</a>
+                <span className="px-1 text-pokered">Fuego</span>
               </span>
             </div>
           </div>
