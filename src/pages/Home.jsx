@@ -3,7 +3,7 @@ import profesor from "../img/profesor.svg";
 import trainerOne from "../img/trainer-red.svg";
 import trainerTwo from "../img/trainer-blue.svg";
 import { Link } from "react-router-dom";
-import { Icon } from "../components/Icons";
+import { Icon } from "../components/common/Icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {

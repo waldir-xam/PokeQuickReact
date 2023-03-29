@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "./Icons";
+import { Icon } from "./common/Icons";
 import { Link } from "react-router-dom";
 import {
   faFacebook,

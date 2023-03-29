@@ -1,4 +1,3 @@
-import React from "react";
 const searchPokemon = async (pokemon) => {
   try {
     const response = await fetch(

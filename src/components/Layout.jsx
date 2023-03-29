@@ -3,18 +3,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
-/*   const [bgColor, setBgColor] = useState("bg-transparent");
-  const [prevBgColor, setPrevBgColor] = useState(null);
- */
-/*   const handleBgColorChange = () => {
-    if (bgColor === "bg-transparent") {
-      setPrevBgColor(bgColor);
-      setBgColor("bg-pokeblack duration-500");
-    } else {
-      setBgColor(prevBgColor);
-      setPrevBgColor(null);
-    }
-  }; */
 
   const changeBodyBackground = (color) => {
     document.body.style.backgroundColor = color;

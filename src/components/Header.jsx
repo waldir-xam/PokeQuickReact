@@ -15,8 +15,9 @@ import {
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import pokelogo from "../img/poke-logo.png";
-import { Icon } from "./Icons";
+import { Icon } from "./common/Icons";
 import { Link } from "react-router-dom";
+import LoginModal from "./common/LoginModal";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,44 +29,21 @@ const Header = () => {
 
   const offcanvasMenuRef = useRef(null);
 
-  const handleBgColorChange = () => {
-    if (bgColor === "bg-transparent") {
-      setPrevBgColor(bgColor);
-      setBgColor("bg-pokeblack");
-    } else {
-      setBgColor(prevBgColor);
-      setPrevBgColor(null);
-    }
-  };
-  /* AUDIO */
   const [isMuted, setIsMuted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const audio = useRef(new Audio());
 
-  useEffect(() => {
-    audio.current.src =
-      "https://vgmsite.com/soundtracks/pokemon-game-boy-pok-mon-sound-complete-set-play-cd/vfywpihuos/1-01.%20Opening.mp3";
-  }, []);
-
-  const togglePlay = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
+  const [showModal, setShowModal] = useState(false);
+  /* login y register */
+  const [showLogin, setShowLogin] = useState(false);
+  const handleCloseLogin = () => setShowLogin(false);
+  
+  const handleChangeLoginToRegister = () => {
+    setShowLogin(false);
+    setShowRegister(true);
   };
 
-  /*   useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isPlaying]);
- */
-  /* FIN AUDIO */
   return (
     <header className="z-20 mx-auto flex w-full flex-row justify-between bg-black px-4">
       <div className="mx-auto flex w-11/12 flex-row items-center justify-between md:w-full lg:mx-auto lg:max-w-7xl lg:justify-between lg:p-2">
@@ -76,7 +54,7 @@ const Header = () => {
             style={{ fontSize: "1.5em" }}
             onClick={() => {
               setShowMenu(!showMenu);
-              handleBgColorChange();
+              //handleBgColorChange();
             }}
           >
             {showMenu ? (
@@ -135,7 +113,14 @@ const Header = () => {
             <li className="mx-auto w-6/12 rounded-2xl border-2 bg-transparent p-2 px-4 text-center duration-300 hover:bg-black hover:text-pokered">
               <Link to="/signup">Registrate</Link>
             </li>
+            <button
+              className="mx-auto w-6/12 rounded-2xl border-2 bg-transparent p-2 px-4 text-center duration-300 hover:bg-black hover:text-pokered"
+              onClick={() => setShowLogin(true)}
+            >
+              LoginModal
+            </button>
           </ul>
+          {/* SOCIAL ICONS */}
           <ul className="mx-auto flex w-9/12 flex-row justify-around py-4 md:w-6/12 md:justify-around lg:w-7/12 lg:justify-around">
             <li className="bg-yellow-mam flex h-9 w-9 cursor-pointer items-center justify-center text-white duration-300 hover:bg-black">
               <Icon css="icon" icon={faFacebookF} />
@@ -184,6 +169,12 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      <LoginModal
+        showLogin={showLogin}
+        handleCloseLogin={handleCloseLogin}
+        handleChangeLoginToRegister={handleChangeLoginToRegister}
+      />
     </header>
   );
 };
